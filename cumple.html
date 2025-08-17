@@ -182,12 +182,12 @@
         
         #pastelFinal {
     position: fixed;
-    top: 45%; /* Lo subimos más arriba */
-    left: 84%;
+    top: 40%; /* Lo subimos más arriba */
+    left: 50%;
     transform: translateX(-50%);
     width: 180px;
     z-index: 200; /* Mayor z-index para que esté sobre el mensaje */
-    opacity: 1;
+    opacity: 0;
     transition: all 1s ease;
     filter: drop-shadow(0 0 20px rgba(254, 202, 87, 0.8));
 }
@@ -199,15 +199,15 @@
         
         #mensajeEspecial {
     position: fixed;
-    top: 59%; /* Lo bajamos para que esté debajo del pastel */
+    top: 65%; /* Lo bajamos para que esté debajo del pastel */
     left: 50%;
-    transform: translate(-70%,-20%); /* Solo centrado horizontalmente */
-    background: rgba(117, 8, 46, 0.85); /* Fondo rosado */
-    padding: 1.rem;
+    transform: translateX(-50%); /* Solo centrado horizontalmente */
+    background: rgba(255, 107, 158, 0.85); /* Fondo rosado */
+    padding: 1.5rem;
     border-radius: 15px;
-    max-width: 90%;
+    max-width: 80%;
     z-index: 150; /* Z-index intermedio (entre pastel y efectos) */
-    opacity: 1;
+    opacity: 0;
     transition: all 1s ease;
     border: none;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -215,13 +215,13 @@
         
         #mensajeEspecial h2 {
             font-family: 'Dancing Script', cursive;
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: var(--color-secondary);
             margin-bottom: 1rem;
         }
         
         #mensajeEspecial p {
-            font-size: 1rem;
+            font-size: 1.5rem;
             line-height: 1.6;
         }
         
@@ -821,6 +821,4 @@ document.addEventListener("dragstart", e => {
 });
     </script>
 </body>
-
 </html>
-
