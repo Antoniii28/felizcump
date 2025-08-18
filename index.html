@@ -151,6 +151,24 @@
             transform: translateZ(20px);
         }
         
+        .birthday-image {
+            display: none;
+            margin: 2rem auto;
+            max-width: 400px;
+            animation: 
+                float 3s infinite ease-in-out,
+                pulse 2s infinite;
+            transform: translateZ(30px);
+            filter: drop-shadow(0 0 15px rgba(254, 202, 87, 0.7));
+        }
+        
+        .birthday-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 3px solid var(--color-secondary);
+        }
+        
         .heart {
             color: var(--color-primary);
             font-size: 3rem;
@@ -380,7 +398,10 @@
         </button>
         
         <div id="animationContainer"></div>
-        <div id="cakeContainer" class="birthday-cake">🎂</div>
+        <div id="imageContainer" class="birthday-image">
+            <img src="Felicidades.png" alt="Felicitaciones">
+        </div>
+        <div id="cakeContainer" class="birthday-cake">😊🎊🎉</div>
     </div>
     
     <!-- Modal para la clave especial -->
@@ -421,6 +442,7 @@
             nameInput: document.getElementById('nameInput'),
             continueButton: document.getElementById('continueButton'),
             animationContainer: document.getElementById('animationContainer'),
+            imageContainer: document.getElementById('imageContainer'),
             cakeContainer: document.getElementById('cakeContainer'),
             musicControl: document.getElementById('musicControl'),
             specialKeyModal: document.getElementById('specialKeyModal'),
@@ -703,6 +725,7 @@
         
         function showCakeAndEffects() {
             elements.cakeContainer.style.display = 'block';
+            elements.imageContainer.style.display = 'block';
             createConfettiStorm();
             createBalloonBurst();
             createFireworkShow();
@@ -945,32 +968,33 @@
             document.body.appendChild(sparkle);
             setTimeout(() => sparkle.remove(), duration * 1000);
         }
+        
         // ===== PROTECCIÓN CONTRA ACCESO AL CÓDIGO FUENTE =====
-document.addEventListener("keydown", e => {
-    // Bloquear Ctrl+U
-    if (e.ctrlKey && e.key === "u") {
-        alert("🙅‍♂️ Ver código fuente no permitido");
-        e.preventDefault();
-    }
-    // Bloquear F12 y Ctrl+Shift+I
-    if (e.key === "F12" || (e.ctrlKey && e.shiftKey && e.key === "I")) {
-        e.preventDefault();
-        alert("Acceso restringido");
-    }
-});
+        document.addEventListener("keydown", e => {
+            // Bloquear Ctrl+U
+            if (e.ctrlKey && e.key === "u") {
+                alert("🙅‍♂️ Ver código fuente no permitido");
+                e.preventDefault();
+            }
+            // Bloquear F12 y Ctrl+Shift+I
+            if (e.key === "F12" || (e.ctrlKey && e.shiftKey && e.key === "I")) {
+                e.preventDefault();
+                alert("Acceso restringido");
+            }
+        });
 
-// Prevenir clic derecho
-document.addEventListener("contextmenu", e => {
-    e.preventDefault();
-    alert("🙅‍♂️ Menú contextual deshabilitado");
-});
+        // Prevenir clic derecho
+        document.addEventListener("contextmenu", e => {
+            e.preventDefault();
+            alert("🙅‍♂️ Menú contextual deshabilitado");
+        });
 
-// Bloquear arrastrar imágenes (opcional)
-document.addEventListener("dragstart", e => {
-    if (e.target.tagName === "IMG") {
-        e.preventDefault();
-    }
-});
+        // Bloquear arrastrar imágenes (opcional)
+        document.addEventListener("dragstart", e => {
+            if (e.target.tagName === "IMG") {
+                e.preventDefault();
+            }
+        });
     </script>
 </body>
 </html>
